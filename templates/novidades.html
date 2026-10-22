@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}🎵 Novidades - Áudios para a Mel{% endblock %}
+
+{% block header_title %}🎵 Novidades para a Mel{% endblock %}
+{% block subtitle %}Mais áudios especiais estão chegando! 💕{% endblock %}
+
+{% block content %}
+
+<div class="aviso-lancamento">
+    <span class="emoji-lancamento">🌸</span>
+    <p>Essa página é o <strong>cantinho das novidades</strong>.</p>
+    <p>Aqui você vai encontrar os <strong>próximos lançamentos</strong> de áudios e surpresas!</p>
+    <span class="emoji-lancamento">💖</span>
+</div>
+
+<div class="previa-audios">
+    <h3 style="color: #f5a0b0; text-align: center; margin-bottom: 15px; font-size: 1.2rem;">
+        🎧 Próximos Lançamentos
+    </h3>
+    
+    <div class="grid-previa">
+        <!-- copie os 10 cards-previa do novidades.html antigo -->
+    </div>
+</div>
+
+<a href="{% url 'index' %}" class="btn-voltar">🎀 Voltar para os Áudios</a>
+
+{% endblock %}

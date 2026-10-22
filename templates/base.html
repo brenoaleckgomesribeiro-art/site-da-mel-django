@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="{% block description %}Áudios e histórias especiais feitas com amor para a Mel 💕{% endblock %}">
+    <title>{% block title %}🌸 Áudios para a Mel{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container" role="main">
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav class="menu-navegacao" aria-label="Navegação principal">
+            <a href="{% url 'index' %}" class="menu-link {% if request.resolver_match.url_name == 'index' %}ativo{% endif %}">🏠 Início</a>
+            <a href="{% url 'historias' %}" class="menu-link {% if request.resolver_match.url_name == 'historias' %}ativo{% endif %}">📖 Histórias</a>
+            <a href="{% url 'novidades' %}" class="menu-link {% if request.resolver_match.url_name == 'novidades' %}ativo{% endif %}">🎵 Novidades</a>
+        </nav>
+
+        <!-- Header -->
+        <header class="header">
+            <img src="{% static 'imagem/imagem1.jpeg' %}" alt="Logo Hello Kitty" class="hello-kitty-img" loading="lazy">
+
+            <h1>{% block header_title %}🌸 Áudios para a Mel{% endblock %}</h1>
+            <p class="subtitle">{% block subtitle %}Quando eu não estiver por perto, me escute aqui 💕{% endblock %}</p>
+
+            <!-- Contador com duas datas especiais -->
+            <div class="contador">
+                <div class="datas-container">
+
+                    <div class="data-item">
+                        <span class="data-emoji">👋</span>
+                        <p>Desde que nos conhecemos</p>
+                        <span class="data-numero" id="dias-conhecidos">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+
+                    <div class="divisor">♥</div>
+
+                    <div class="data-item">
+                        <span class="data-emoji">💍</span>
+                        <p>Desde o namoro</p>
+                        <span class="data-numero" id="dias-namoro">0</span>
+                        <span class="data-label">dias</span>
+                    </div>
+
+                </div>
+
+                <p class="mensagem-amor" id="mensagem-amor">💕</p>
+            </div>
+        </header>
+
+        <!-- CONTEÚDO DA PÁGINA -->
+        {% block content %}
+        {% endblock %}
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>Feito com 💖 para a Mel</p>
+            <p class="small-text">⋆｡°✩ sempre por perto ✩°｡⋆</p>
+        </footer>
+
+    </div>
+
+    <!-- Botão voltar ao topo -->
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">↑</button>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
